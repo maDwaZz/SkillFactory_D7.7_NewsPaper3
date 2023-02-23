@@ -41,3 +41,15 @@ class NewsCreate(CreateView):
     form_class = PostForm
     model = Post
     template_name = 'news_edit.html'
+
+
+class NewsUpdate(UpdateView):
+    form_class = PostForm
+    model = Post
+    template_name = 'news_edit.html'
+
+
+class NewsDelete(DeleteView):
+    model = Post
+    template_name = 'news_delete.html'
+    success_url = reverse_lazy('news_list')
